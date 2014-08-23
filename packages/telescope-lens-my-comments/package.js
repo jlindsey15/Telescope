@@ -1,4 +1,4 @@
-Package.describe({summary: "Telescope Recently Commented lens"});
+Package.describe({summary: "Telescope My Comments lens"});
 
 Package.on_use(function (api) {
 
