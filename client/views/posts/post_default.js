@@ -1,4 +1,4 @@
-Template[getTemplate('post_submit')].helpers({
+Template[getTemplate('post_default')].helpers({
   categoriesEnabled: function(){
     return Categories.find().count();
   },
@@ -24,7 +24,7 @@ Template[getTemplate('post_submit')].helpers({
   }
 });
 
-Template[getTemplate('post_submit')].rendered = function(){
+Template[getTemplate('post_default')].rendered = function(){
   // run all post submit rendered callbacks
   var instance = this;
   postSubmitRenderedCallbacks.forEach(function(callback) {
@@ -42,7 +42,7 @@ Template[getTemplate('post_submit')].rendered = function(){
 
 }
 
-Template[getTemplate('post_submit')].events({
+Template[getTemplate('post_default')].events({
   'change input[name=status]': function (e, i) {
     Session.set('currentPostStatus', e.currentTarget.value);
   },
