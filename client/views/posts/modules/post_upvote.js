@@ -21,7 +21,7 @@ Template[getTemplate('postUpvote')].events({
     Meteor.call('upvotePost', post, function(error, result){
       trackEvent("post upvoted", {'_id': post._id});
     });
-  }
+  },
   'click .upvote-link.voted': function(e, instance){
     var post = this;
     e.preventDefault();
