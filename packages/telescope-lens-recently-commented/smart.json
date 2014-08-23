@@ -1,0 +1,8 @@
+{
+  "name": "telescope-recently-commented",
+  "description": "A Telescope “Recently Commented” lens.",
+  "homepage": "https://github.com/TelescopeJS/telescope-lens-recently-commented",
+  "author": "Sacha Greif <info@sachagreif.com> (http://sachagreif.com)",
+  "version": "0.1.1",
+  "git": "https://github.com/TelescopeJS/telescope-lens-recently-commented.git"
+}
