@@ -11,7 +11,7 @@ Template[getTemplate('postUpvote')].helpers({
 });
 
 Template[getTemplate('postUpvote')].events({
-  'click .upvote-link.voted': function(e, instance){
+  'click .upvote-link.not-voted': function(e, instance){
     var post = this;
     e.preventDefault();
     if(!Meteor.user()){
@@ -22,7 +22,7 @@ Template[getTemplate('postUpvote')].events({
       trackEvent("post upvoted", {'_id': post._id});
     });
   }
-  'click .upvote-link.not-voted': function(e, instance){
+  'click .upvote-link.voted': function(e, instance){
     var post = this;
     e.preventDefault();
     if(!Meteor.user()){
