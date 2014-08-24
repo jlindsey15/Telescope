@@ -10,22 +10,8 @@ STATUS_APPROVED=2;
 STATUS_REJECTED=3;
 
 window.onscroll = function(){
-  
-  var totalHeight, currentScroll, visibleHeight;
-  
-  if (document.documentElement.scrollTop)
-    { currentScroll = document.documentElement.scrollTop; }
-  else
-    { currentScroll = document.body.scrollTop; }
-  
-  totalHeight = document.body.offsetHeight;
-  visibleHeight = document.documentElement.clientHeight;
-  
-  $('#data').html(
-    'total height: ' + totalHeight + '<br />' +
-    'visibleHeight : ' + visibleHeight + '<br />' +
-    'currentScroll:' + currentScroll);
-  if (totalHeight <= currentScroll + visibleHeight )
+
+  if($(document).height()>=$(window).height()) {
   {
     Router.go('/top/40');
   }
