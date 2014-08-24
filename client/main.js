@@ -9,11 +9,30 @@ STATUS_PENDING=1;
 STATUS_APPROVED=2;
 STATUS_REJECTED=3;
 
-window.onscroll = function(ev) {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        Router.go('/top/40');
-    }
-};
+window.onscroll = function(){
+  
+  var totalHeight, currentScroll, visibleHeight;
+  
+  if (document.documentElement.scrollTop)
+    { currentScroll = document.documentElement.scrollTop; }
+  else
+    { currentScroll = document.body.scrollTop; }
+  
+  totalHeight = document.body.offsetHeight;
+  visibleHeight = document.documentElement.clientHeight;
+  
+  $('#data').html(
+    'total height: ' + totalHeight + '<br />' +
+    'visibleHeight : ' + visibleHeight + '<br />' +
+    'currentScroll:' + currentScroll);
+  if (totalHeight <= currentScroll + visibleHeight )
+  {
+    Router.go('/top/40');
+  }
+
+  
+}
+
 
 adminNav = adminNav.concat([
   {
