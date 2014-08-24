@@ -1,3 +1,11 @@
+$(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 100 ) {
+    var count = parseInt(Session.get('postsLimit')) + parseInt(getSetting('postsPerPage', 10));
+    var categorySegment = Session.get('categorySlug') ? Session.get('categorySlug') + '/' : '';
+    Router.go('/' + Session.get('view') + '/' + categorySegment + count);
+   }
+});
+
 Template[getTemplate('posts_list')].helpers({
 
   post_item: function () {
