@@ -9,16 +9,11 @@ STATUS_PENDING=1;
 STATUS_APPROVED=2;
 STATUS_REJECTED=3;
 
-window.onscroll = function(){
-
-  if($(document).height()>=$(window).height()) {
-  {
-    Router.go('/top/40');
+window.onscroll = function() {
+  if($(document).height()>$(window).height()) {
+    Router.go('/top/40')
   }
-
-  
 }
-
 
 adminNav = adminNav.concat([
   {
