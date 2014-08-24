@@ -277,10 +277,13 @@ em {
     z-index: 20;
     position: relative; }
   /* line 17, ../scss/modules/_nav.scss */
-  .header .logo {
-    position: absolute;
-    display: block;
+  .header {
     text-align: center;
+    position: absolute;
+  .header .logo {
+ 
+    display: block;
+    
     color: white;
     left: 0px;
     right: 0px; }
@@ -304,10 +307,11 @@ em {
     /* line 40, ../scss/modules/_nav.scss */
     .header .logo-image a {
       display: inline-block;
-      background: no-repeat center center;
       font: 0/0 a;
       text-shadow: none;
       color: transparent; }
+  .header {
+    background: no-repeat center center
   /* line 48, ../scss/modules/_nav.scss */
   .header .secondary-nav {
     z-index: 20;
