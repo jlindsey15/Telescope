@@ -27,7 +27,7 @@ function ScrollHandler(e) {
         console.log('scroll');
 
         //do work
-        if ($window.scrollTop() + $window.height() > getDocHeight() - 100) {
+        if ($window.scrollTop() + $window.height() >= getDocHeight()) {
           var count = parseInt(Session.get('postsLimit')) + parseInt(getSetting('postsPerPage', 10));
           var categorySegment = Session.get('categorySlug') ? Session.get('categorySlug') + '/' : '';
           Router.go('/' + Session.get('view') + '/' + categorySegment + count);
