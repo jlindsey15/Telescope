@@ -1,10 +1,38 @@
-$(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() > $(document).height() - 100 ) {
-    var count = parseInt(Session.get('postsLimit')) + parseInt(getSetting('postsPerPage', 10));
-    var categorySegment = Session.get('categorySlug') ? Session.get('categorySlug') + '/' : '';
-    Router.go('/' + Session.get('view') + '/' + categorySegment + count);
-   }
+var _throttleTimer = null;
+var _throttleDelay = 100;
+var $window = $(window);
+var $document = $(document);
+
+function getDocHeight() {
+    var D = document;
+    return Math.max(
+        D.body.scrollHeight, D.documentElement.scrollHeight,
+        D.body.offsetHeight, D.documentElement.offsetHeight,
+        D.body.clientHeight, D.documentElement.clientHeight
+    );
+}
+
+$document.ready(function () {
+
+    $window
+        .off('scroll', ScrollHandler)
+        .on('scroll', ScrollHandler);
+
 });
+
+function ScrollHandler(e) {
+    //throttle event:
+    clearTimeout(_throttleTimer);
+    _throttleTimer = setTimeout(function () {
+        console.log('scroll');
+
+        //do work
+        if ($window.scrollTop() + $window.height() > getDocHeight() - 100) {
+            alert("near bottom!");
+        }
+
+    }, _throttleDelay);
+}
 
 Template[getTemplate('posts_list')].helpers({
 
