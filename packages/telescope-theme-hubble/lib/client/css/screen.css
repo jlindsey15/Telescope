@@ -313,6 +313,7 @@ em {
       color: transparent; }
   .header {
     background: no-repeat center center
+  }
   /* line 48, ../scss/modules/_nav.scss */
   .header .secondary-nav {
     z-index: 20;
