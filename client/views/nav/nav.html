@@ -7,9 +7,8 @@
 
     {{#if logo_url}}
 	<h1 class="logo logo-image header-module" style="float:left;">
-        <a href="http://trendify.io">
-          <img src="{{logo_url}}" alt="{{site_title}}"/>
-        </a>
+          <img src="{{logo_url}}" alt="{{site_title}}" usemap="#logos"/>
+        
 	</h1>
 	<h1 class="logo header-module">
 		<a href="/">{{site_title}}</a>
@@ -42,3 +41,9 @@
 
   </header>
 </template>
+
+<map name="logos">
+    <area shape="rect" coords="0, 0, 60, 65" href="http://trendify.io" title="Trendify Homepage" alt="Trendify Homepage" />
+    <area shape="rect" coords="60, 0, 150, 65" href="http://knowledgebase.trendify.io" title="Trendify Knowledgebase" alt="Trendify Knowledgebase" />
+
+</map>
