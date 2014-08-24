@@ -1,5 +1,4 @@
 <template name="nav">
-
   <header class="header">
 
     <a href="#menu" class="mobile-only mobile-menu-button button">
@@ -7,16 +6,11 @@
     </a>
 
     {{#if logo_url}}
-	<h1 class="logo logo-image header-module" style="float:left;">
-
-          <img src="{{logo_url}}" alt="{{site_title}}" />
-        
-	</h1>
-	<h1 class="logo header-module">
-		<a href="/">{{site_title}}</a>
+      <h1 class="logo logo-image header-module">
+        <a href="/">
+          <img src="{{logo_url}}" alt="{{site_title}}"/>
+        </a>
       </h1>
-	 
-
     {{else}}
       <h1 class="logo header-module"><a href="/">{{site_title}}</a></h1>
     {{/if}}
@@ -43,5 +37,3 @@
 
   </header>
 </template>
-
-
