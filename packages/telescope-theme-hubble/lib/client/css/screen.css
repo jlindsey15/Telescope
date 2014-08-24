@@ -280,6 +280,7 @@ em {
   .header {
     text-align: center;
     position: absolute;
+  }
   .header .logo {
  
     display: block;
