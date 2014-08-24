@@ -10,7 +10,7 @@ STATUS_APPROVED=2;
 STATUS_REJECTED=3;
 
 $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+   if($(window).scrollTop() + $(window).height() > $(document).height() - 100 ) {
        Router.go('/top/40');
    }
 });
