@@ -9,6 +9,12 @@ STATUS_PENDING=1;
 STATUS_APPROVED=2;
 STATUS_REJECTED=3;
 
+window.onscroll = function(ev) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        Router.go('/top/40');
+    }
+};
+
 adminNav = adminNav.concat([
   {
     route: 'posts_pending',
