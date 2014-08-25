@@ -12,7 +12,7 @@ Template[getTemplate('post_default')].helpers({
     },
     searchQueryEmpty: function () {
       return !!Session.get("searchQuery") ? '' : 'empty';
-    }
+    },
   categoriesEnabled: function(){
     return Categories.find().count();
   },
