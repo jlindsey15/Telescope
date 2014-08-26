@@ -1,5 +1,5 @@
 var _throttleTimer = null;
-var _throttleDelay = 100;
+var _throttleDelay = 500;
 var $window = $(window);
 var $document = $(document);
 
