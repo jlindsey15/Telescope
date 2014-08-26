@@ -1,16 +1,18 @@
 <template name="post_default">
+	
+      <div style="text-align: center; position:absolute; margin-left: auto; margin-right: auto; left:0; right:0; top: 25vh; background-color:white; font-size:25pt; width:60%;"class="search {{searchQueryEmpty}}">
+		<h1 style="color:white; font-weight:bold; font-size:100">Knowledge at your fingertips</h1>
 
-      <div class="search {{searchQueryEmpty}}">
+    <input id="search" type="search" class="search-field" placeholder="search" value="{{searchQuery}}">
+  		<h1 style="color:white; font-weight:bold; font-size:50">Start browsing our catalog of resources</h1>
 
-    <input style="position:absolute; margin-left: auto; margin-right: auto; left:0; right:0; top: 40vh; background-color:white; font-size:25pt; width:60%;" id="search" type="search" class="search-field" placeholder="search" value="{{searchQuery}}">
   </div>
-  <div style="position:absolute; width:100%; top:80vh;  background:dark-grey; height:20vh"></div>
-  <div style="position: absolute; width:100%; height:80vh; z-index:-1; left:0px; overflow:hidden">
-    <img src="http://trendify.io/img/bg-videofallback.jpg" style="width:100%">
+  <div style="position: absolute; width:100%; height:70vh; z-index:-1; left:0px; overflow:hidden">
+    <img src="http://i58.tinypic.com/atpur.png" style="width:100%">
 	</div>
- <div style="height:80vh"></div>
+ <div style="height:70vh"></div>
 
-  <center><h1 style="color:white; font-weight: bold; font-size:70; line-height:10vh; margin-bottom:10vh">Contribute your own resource</h1></center>
+  <center><h1 style="color:white; font-weight: bold; font-size:70; line-height:10vh; margin-top:5vh; margin-bottom:15vh">Contribute your own resource</h1></center>
 
   <div class="grid submit">
     <form class="grid-block form-horizontal">
