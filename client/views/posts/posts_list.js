@@ -2,7 +2,7 @@ var _throttleTimer = null;
 var _throttleDelay = 500;
 var $window = $(window);
 var $document = $(document);
-var views = ['top', 'new', 'best', 'digest', 'recently-commented', 'my-comments', 'category', 'search'];
+var autoscroll_views = ['top', 'new', 'best', 'digest', 'recently-commented', 'my-comments', 'category', 'search'];
 
 function getDocHeight() {
     var D = document;
@@ -25,7 +25,9 @@ function ScrollHandler(e) {
     //throttle event:
 	var autoscroll = false;
 	var x;
-	for (x in views) {
+	for (x in autoscroll_views) {
+	  console.log(x);
+	  console.log(window.location.pathname);
 	  if (window.location.pathname.indexOf(x) != -1) {
 	    autoscroll = true;
 	  }
