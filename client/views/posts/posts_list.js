@@ -2,6 +2,7 @@ var _throttleTimer = null;
 var _throttleDelay = 500;
 var $window = $(window);
 var $document = $(document);
+var views = ['top', 'new', 'best', 'digest', 'recently-commented', 'my-comments', 'category', 'search'];
 
 function getDocHeight() {
     var D = document;
@@ -22,18 +23,20 @@ $document.ready(function () {
 
 function ScrollHandler(e) {
     //throttle event:
-    clearTimeout(_throttleTimer);
-    _throttleTimer = setTimeout(function () {
-        console.log('scroll');
+	if (views.indexOf(Session.get('view')) != -1) {
+      clearTimeout(_throttleTimer);
+      _throttleTimer = setTimeout(function () {
+          console.log('scroll');
 
-        //do work
-        if ($window.scrollTop() + $window.height() >= getDocHeight()) {
-          var count = parseInt(Session.get('postsLimit')) + parseInt(getSetting('postsPerPage', 10));
-          var categorySegment = Session.get('categorySlug') ? Session.get('categorySlug') + '/' : '';
-          Router.go('/' + Session.get('view') + '/' + categorySegment + count);
-        }
+          //do work
+          if ($window.scrollTop() + $window.height() >= getDocHeight()) {
+            var count = parseInt(Session.get('postsLimit')) + parseInt(getSetting('postsPerPage', 10));
+            var categorySegment = Session.get('categorySlug') ? Session.get('categorySlug') + '/' : '';
+            Router.go('/' + Session.get('view') + '/' + categorySegment + count);
+          }
 
-    }, _throttleDelay);
+      }, _throttleDelay);
+	}
 }
 
 Template[getTemplate('posts_list')].helpers({
