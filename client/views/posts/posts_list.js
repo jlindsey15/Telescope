@@ -28,7 +28,7 @@ function ScrollHandler(e) {
 	for (x in autoscroll_views) {
 	  console.log(x);
 	  console.log(window.location.pathname);
-	  if (window.location.pathname.indexOf(x) != -1) {
+	  if (window.location.pathname.indexOf(autoscroll_views[x]) != -1) {
 	    autoscroll = true;
 	  }
 	}
