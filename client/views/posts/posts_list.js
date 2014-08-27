@@ -25,7 +25,7 @@ function ScrollHandler(e) {
     //throttle event:
 	if (views.indexOf(Session.get('view')) != -1) {
 	  console.log(Session.get('view'));
-	  console.log(views.indexOf(Session.get('view'));
+	  console.log(views.indexOf(Session.get('view')));
       clearTimeout(_throttleTimer);
       _throttleTimer = setTimeout(function () {
           console.log('scroll');
