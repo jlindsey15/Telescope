@@ -23,9 +23,14 @@ $document.ready(function () {
 
 function ScrollHandler(e) {
     //throttle event:
-	if (views.indexOf(Session.get('view')) != -1) {
-	  console.log(Session.get('view'));
-	  console.log(views.indexOf(Session.get('view')));
+	var autoscroll = false;
+	var x;
+	for (x in views) {
+	  if (window.location.pathname.indexOf(x) != -1) {
+	    autoscroll = true;
+	  }
+	}
+	if (autoscroll) {
       clearTimeout(_throttleTimer);
       _throttleTimer = setTimeout(function () {
           console.log('scroll');
